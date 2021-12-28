@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iOSPhotoEditor
+//import iOSPhotoEditor
 
 class ViewController: UIViewController {
     

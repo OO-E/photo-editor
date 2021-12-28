@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
@@ -191,13 +193,16 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func prepareBackgroundView(){
-        let blurEffect = UIBlurEffect.init(style: .light)
-        let visualEffect = UIVisualEffectView.init(effect: blurEffect)
-        let bluredView = UIVisualEffectView.init(effect: blurEffect)
-        bluredView.contentView.addSubview(visualEffect)
-        visualEffect.frame = UIScreen.main.bounds
-        bluredView.frame = UIScreen.main.bounds
-        view.insertSubview(bluredView, at: 0)
+        
+        let blurEffect = UIBlurEffect.init(style: .dark)
+            let visualEffect = UIVisualEffectView.init(effect: blurEffect)
+            let bluredView = UIVisualEffectView.init(effect: blurEffect)
+            bluredView.contentView.addSubview(visualEffect)
+            visualEffect.frame = UIScreen.main.bounds
+            bluredView.frame = UIScreen.main.bounds
+            view.insertSubview(bluredView, at: 0)
+        
+      
     }
     
     

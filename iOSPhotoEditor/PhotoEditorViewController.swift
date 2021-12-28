@@ -40,7 +40,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     
     public var image: UIImage?
-    /**
+    /**22
      Array of Stickers -UIImage- that the user will choose from
      */
     public var stickers : [UIImage] = []
@@ -103,6 +103,7 @@ public final class PhotoEditorViewController: UIViewController {
         configureCollectionView()
         stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
+        doneButton.layer.cornerRadius = 5
     }
     
     func configureCollectionView() {
