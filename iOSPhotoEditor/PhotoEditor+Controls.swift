@@ -34,6 +34,7 @@ extension PhotoEditorViewController {
         controller.delegate = self
         controller.image = image
         let navController = UINavigationController(rootViewController: controller)
+        navController.navigationBar.barTintColor = UIColor.black
         present(navController, animated: true, completion: nil)
     }
 
