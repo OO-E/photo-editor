@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'editorphoto'
   s.version          = '1.0.0'
-  s.summary          = ''
+  s.summary          = 'lorem ipsum'
 
-  s.description      = ""
+  s.description      = "lorem ipsum"
 
   s.homepage         = 'https://github.com/OO-E/photo-editor'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
