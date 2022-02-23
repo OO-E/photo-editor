@@ -128,9 +128,11 @@ public final class PhotoEditorViewController: UIViewController {
         colorsCollectionView.delegate = colorsCollectionViewDelegate
         colorsCollectionView.dataSource = colorsCollectionViewDelegate
         
-        colorsCollectionView.register(
-            UINib(nibName: "ColorCollectionViewCell", bundle: Bundle(for: ColorCollectionViewCell.self)),
-            forCellWithReuseIdentifier: "ColorCollectionViewCell")
+        
+        let bundle = Bundle.bundle(forResource: "\(ColorCollectionViewCell.self)", ofType: "nib")
+        let cellNib = UINib(nibName: "\(ColorCollectionViewCell.self)", bundle: bundle)
+        
+        colorsCollectionView.register(cellNib, forCellWithReuseIdentifier: "\(ColorCollectionViewCell.self)")
     }
     
     func setImageView(image: UIImage) {
