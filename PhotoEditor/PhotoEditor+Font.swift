@@ -15,8 +15,10 @@ extension PhotoEditorViewController {
     func registerFont() {
         let url = Bundle.bundle(forResource: "icomoon", ofType: "ttf").bundleURL
         
+        var newUrl = URL(string: url.absoluteString + "icomoon.ttf")
+        print("P0 ", newUrl)
         print("P1 ", url)
-        guard let fontDataProvider = CGDataProvider(url: url as CFURL) else {
+        guard let fontDataProvider = CGDataProvider(url: newUrl as! CFURL) else {
             return
         }
         print("P2")
