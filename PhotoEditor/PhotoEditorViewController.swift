@@ -17,10 +17,10 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     //To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
-
+    
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
-
+    
     @IBOutlet weak var topGradient: UIView!
     @IBOutlet weak var bottomGradient: UIView!
     
@@ -71,12 +71,18 @@ public final class PhotoEditorViewController: UIViewController {
     
     
     var stickersViewController: StickersViewController!
-
-    //Register Custom font before we load XIB
-    public override func loadView() {
+    
+    public init (){
+        super.init(nibName: "\(PhotoEditorViewController.self)", bundle: PhotoEditorViewController.getBundle())
+        
         registerFont()
-        super.loadView()
+        
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +107,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         
         configureCollectionView()
+        let bundleSPM = Bundle.bundle(forResource: "\(StickersViewController.self)", ofType: "nib")
         stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
         doneButton.layer.cornerRadius = 5
@@ -137,6 +144,11 @@ public final class PhotoEditorViewController: UIViewController {
         topGradient.isHidden = hide
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
+    }
+    
+    static func getBundle() -> Bundle? {
+        let bundleSPM = Bundle.bundle(forResource: "\(PhotoEditorViewController.self)", ofType: "xib")
+        return bundleSPM
     }
 }
 
