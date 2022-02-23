@@ -17,11 +17,11 @@ let package = Package(
     targets: [
         .target(
             name: "PhotoEditor",
-            path:"PhotoEditor"),
+            path:"PhotoEditor",
             exclude: ["Bundle+Module.swift"],
             resources: [
               .process("Resources"),
               .process("Assets")
-            ]
+            ])
     ]
 )
