@@ -4,22 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "iOSPhotoEditor",
+    name: "PhotoEditor",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "iOSPhotoEditor",
-            targets: ["iOSPhotoEditor"]),
+            name: "PhotoEditor",
+            targets: ["PhotoEditor"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "iOSPhotoEditor",
-            path:"iOSPhotoEditor")
-        
+            name: "PhotoEditor",
+            path:"PhotoEditor"),
+            exclude: ["Bundle+Module.swift"],
+            resources: [
+              .process("Resources"),
+              .process("Assets")
+            ]
     ]
 )
